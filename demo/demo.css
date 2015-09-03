@@ -1,0 +1,10 @@
+@import "../atom-autogrow-textarea.css";
+@import "template-demo-pages/template-demo-pages";
+
+body {
+  padding: 40px;
+}
+
+.atom-AutogrowTextarea {
+  width: 200px;
+}

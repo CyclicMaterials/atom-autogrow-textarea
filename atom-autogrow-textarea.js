@@ -16,7 +16,7 @@ function intent(DOM, optNamespace) {
       DOM.select(selector).observable
         .filter(elements => elements.length > 0)
         .map(elements => elements[0].value)
-        .take(1),
+        .first(),
        DOM.select(selector).events(`input`)
         .map(e => e.target.value)
     ).startWith(``),

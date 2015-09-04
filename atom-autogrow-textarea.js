@@ -9,10 +9,19 @@ const DIALOGUE_NAME = `atom-AutogrowTextarea`;
 function intent(DOM, optNamespace) {
   const namespace = optNamespace ? `.${optNamespace}` : ``;
 
+  const selector = `TEXTAREA${namespace}`;
+
   return {
-    value$: DOM.select(`TEXTAREA${namespace}`).events(`input`)
-      .map(e => e.target.value)
-      .startWith(``),
+    value$: Rx.Observable.merge(
+      DOM.select(selector).observable
+        .filter(elements => elements.length > 0)
+        .map(elements => elements[0].value)
+        .take(1)
+        .startWith(``),
+       DOM.select(selector).events(`input`)
+        .map(e => e.target.value)
+        .startWith(``)
+    ),
   };
 }
 

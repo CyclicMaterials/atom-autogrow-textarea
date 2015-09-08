@@ -1,5 +1,5 @@
 {
-  "name": "atom-autogrow-textarea",
+  "name": "@cyclic/atom-autogrow-textarea",
   "version": "2.0.0",
   "author": "Frederik Krautwald",
   "description": "Textarea that grows in height as more lines of input are entered",

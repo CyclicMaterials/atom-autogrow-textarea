@@ -24,9 +24,9 @@
   "dependencies": {
     "@cycle/core": "^3.1.0",
     "@cycle/dom": "^5.0.1",
-    "atom-layout": "git://github.com/CyclicMaterials/atom-layout",
-    "template-demo-pages": "git://github.com/CyclicMaterials/template-demo-pages",
-    "util-combine-class-names": "git://github.com/CyclicMaterials/util-combine-class-names"
+    "@cyclic/atom-layout": "^1.0.1",
+    "@cyclic/template-demo-pages": "^1.0.0",
+    "@cyclic/util-combine-class-names": "^1.0.0"
   },
   "devDependencies": {
     "babel": "^5.8.21",

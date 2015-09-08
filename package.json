@@ -2,7 +2,7 @@
   "name": "atom-autogrow-textarea",
   "version": "1.0.0",
   "author": "Frederik Krautwald",
-  "description": "A Material Design text field",
+  "description": "Textarea that grows in height as more lines of input are entered",
   "license": "MIT",
   "bugs": "https://github.com/CyclicMaterials/atom-autogrow-textarea/issues",
   "repository": {
@@ -34,8 +34,9 @@
     "babelify": "^6.2.0",
     "bluebird": "^2.9.34",
     "browserify": "^11.0.1",
+    "cli-release": "^1.0.3",
     "cssnext": "^1.8.3",
-    "eslint": "1.0.x",
+    "eslint": "1.0.0",
     "eslint-config-cycle": "^3.0.0",
     "eslint-plugin-cycle": "^1.0.1",
     "eslint-plugin-no-class": "^0.1.0",
@@ -43,7 +44,8 @@
     "postcss": "^4.0.0",
     "postcss-cli": "^1.0.0",
     "shelljs": "^0.5.3",
-    "tape": "^4.2.0"
+    "tape": "^4.2.0",
+    "validate-commit-message": "^3.0.0"
   },
   "scripts": {
     "lint": "eslint *.js",
@@ -51,9 +53,10 @@
     "css": "postcss -c postcss.config.json",
     "browserify": "browserify demo/main.js -d -t [ babelify --optional runtime ] --outfile demo/bundle.js",
     "build": "npm run css && npm run browserify",
-    "start": "npm install && npm run build && echo 'Open demo/index.html in your browser'",
-    "patch": "node release.js patch",
-    "minor": "node release.js minor",
-    "major": "node release.js major"
+    "deps": "npm install && validate-commit-msg",
+    "start": "npm run deps && npm run build && echo 'Open demo/index.html in your browser'",
+    "patch": "release patch",
+    "minor": "release minor",
+    "major": "release major"
   }
 }

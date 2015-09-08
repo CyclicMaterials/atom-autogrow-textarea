@@ -6,17 +6,17 @@ import atomAutogrowTextarea from '../atom-autogrow-textarea.js';
 
 function demo({DOM}) {
   const autogrowTextarea = atomAutogrowTextarea(
-    {DOM, props$: Rx.Observable.just({})}, `demo-AutogrowTextarea`);
+    {DOM, props$: Rx.Observable.just({})});
 
   const autogrowTextareaMaxRows = atomAutogrowTextarea(
     {DOM, props$: Rx.Observable.just({
       maxRows: 4,
-    })}, `demo-AutogrowTextarea--maxRows`);
+    })});
 
   const autogrowTextareaRows = atomAutogrowTextarea(
     {DOM, props$: Rx.Observable.just({
       rows: 4,
-    })}, `demo-AutogrowTextarea--rows`);
+    })});
 
   return {
     DOM: Rx.Observable.combineLatest(

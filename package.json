@@ -32,7 +32,6 @@
     "babel": "^5.8.21",
     "babel-runtime": "^5.8.20",
     "babelify": "^6.2.0",
-    "bluebird": "^2.9.34",
     "browserify": "^11.0.1",
     "cli-release": "^1.0.3",
     "cssnext": "^1.8.3",
@@ -49,7 +48,9 @@
   },
   "scripts": {
     "lint": "eslint *.js",
-    "test": "npm run lint && babel-node *.test.js | faucet",
+    "testJs": "npm run lint && babel-node *.test.js | faucet",
+    "testCss": "postcss -u cssnext -o tmp.css atom-autogrow-textarea.css && rm -f tmp.css",
+    "test": "npm run testCss && npm run testJs",
     "css": "postcss -c postcss.config.json",
     "browserify": "browserify demo/main.js -d -t [ babelify --optional runtime ] --outfile demo/bundle.js",
     "build": "npm run css && npm run browserify",

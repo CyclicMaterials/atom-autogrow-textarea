@@ -1,4 +1,4 @@
-@import "atom-layout/atom-layout.css";
+@import "@cyclic/atom-layout/atom-layout.css";
 
 .atom-AutogrowTextarea {
   display: inline-block;

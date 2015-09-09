@@ -1,3 +1,15 @@
+# v3.0.2 (2015-09-09)
+
+
+## Bug Fixes
+
+- **CSS:** Error: Failed to find 'atom-layout/atom-layout.css'
+  ([411eeb27](https://github.com/CyclicMaterials/atom-autogrow-textarea/commits/411eeb27d315931080aff8ce52cbe891d6152d6e),
+   [#1](https://github.com/CyclicMaterials/atom-autogrow-textarea/issues/1))
+- **JS:** Error: Cannot find module 'util-combine-class-names'
+  ([51e77258](https://github.com/CyclicMaterials/atom-autogrow-textarea/commits/51e77258264a98d84eacd8a5b4f670605ac2fa1d))
+
+
 # v3.0.1 (2015-09-09)
 
 

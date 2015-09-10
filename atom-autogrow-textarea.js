@@ -6,14 +6,14 @@ import combineClassNames from "@cyclic/util-combine-class-names";
 
 const DIALOGUE_NAME = `atom-AutogrowTextarea`;
 
-let idSuffix = 0;
+let cycleIdSuffix = 0;
 
 function makeCycleId() {
-  return `${DIALOGUE_NAME}-${idSuffix++}`;
+  return `${DIALOGUE_NAME}-${cycleIdSuffix++}`;
 }
 
 function intent({DOM, cycleId}) {
-  const selector = `TEXTAREA.${cycleId}`;
+  const selector = `${DIALOGUE_NAME}_textarea.${cycleId}`;
 
   return {
     value$: Rx.Observable.merge(
@@ -107,5 +107,7 @@ function atomAutogrowTextarea({DOM, props$, optCycleId = makeCycleId()}) {
     state$,
   };
 }
+
+export {DIALOGUE_NAME};
 
 export default atomAutogrowTextarea;

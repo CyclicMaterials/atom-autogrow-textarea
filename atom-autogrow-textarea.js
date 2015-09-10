@@ -13,7 +13,7 @@ function makeCycleId() {
 }
 
 function intent({DOM, cycleId}) {
-  const selector = `${DIALOGUE_NAME}_textarea.${cycleId}`;
+  const selector = `.${DIALOGUE_NAME}_textarea.${cycleId}`;
 
   return {
     value$: Rx.Observable.merge(

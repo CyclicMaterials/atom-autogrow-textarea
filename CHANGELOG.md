@@ -1,3 +1,19 @@
+# v3.1.0 (2015-09-11)
+
+
+## Bug Fixes
+
+- **atom-autogrow-textarea:** missing . before class name
+  ([11976cad](https://github.com/CyclicMaterials/atom-autogrow-textarea/commits/11976cadd6c97763abc889b040b1867ac5c7eb00))
+
+
+## Features
+
+- **atom-autogrow-textarea:** expose dialogue name
+  ([dea16498](https://github.com/CyclicMaterials/atom-autogrow-textarea/commits/dea1649865f0b901e7e1d335414d5758b5bf95fd),
+   [#5](https://github.com/CyclicMaterials/atom-autogrow-textarea/issues/5))
+
+
 # v3.0.2 (2015-09-09)
 
 

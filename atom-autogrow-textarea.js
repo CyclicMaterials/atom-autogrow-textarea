@@ -2,18 +2,13 @@
 
 import {Rx} from '@cycle/core';
 import {hJSX} from '@cycle/dom'; // eslint-disable-line
+import cuid from 'cuid';
 import combineClassNames from "@cyclic/util-combine-class-names";
 
 const DIALOGUE_NAME = `atom-AutogrowTextarea`;
 
-let cycleIdSuffix = 0;
-
-function makeCycleId() {
-  return `${DIALOGUE_NAME}-${cycleIdSuffix++}`;
-}
-
-function intent({DOM, cycleId}) {
-  const selector = `.${DIALOGUE_NAME}_textarea.${cycleId}`;
+function intent({DOM, id}) {
+  const selector = `.${id} .${DIALOGUE_NAME}_textarea`;
 
   return {
     value$: Rx.Observable.merge(
@@ -40,7 +35,7 @@ function model({props$, actions}) {
   return props$.combineLatest(
     actions.value$,
     (props, value) => {
-      let {maxRows, rows} = props;
+      let {className, maxRows, rows} = props;
 
       maxRows = maxRows || 0;
       rows = rows || 1;
@@ -56,39 +51,35 @@ function model({props$, actions}) {
       }
 
       return {
+        className,
         value,
-        mirrorTextValue: adjustedTokens.join(`<br/>`) + `&nbsp;`,
+        mirrorTextValue: adjustedTokens.join(`<br>`) + `&nbsp;`,
         rows,
       };
     }
   );
 }
 
-function view({state$, cycleId}) {
+function view({state$, id}) {
   return state$.map(
     (state) => {
+      const {className, mirrorTextValue, rows} = state;
+
       return (// eslint-disable-line
-        <div className={`${cycleId} ${DIALOGUE_NAME}`}>
+        <div className={combineClassNames(id, `${DIALOGUE_NAME}`, className)}>
           <div
-            className={combineClassNames(
-              cycleId,
-              `${DIALOGUE_NAME}_mirrorText`
-              )}
+            className={`${DIALOGUE_NAME}_mirrorText`}
             attributes={{'aria-hidden': true}}
-            innerHTML={state.mirrorTextValue}></div>
+            innerHTML={mirrorTextValue}></div>
 
           <div
             className={combineClassNames(
-              cycleId,
               `${DIALOGUE_NAME}_container`,
               `atom-Layout--fit`
               )}>
             <textarea
-              className={combineClassNames(
-              cycleId,
-              `${DIALOGUE_NAME}_textarea`
-              )}
-              rows={state.rows}></textarea>
+              className={`${DIALOGUE_NAME}_textarea`}
+              rows={rows}></textarea>
           </div>
         </div>
       );
@@ -96,14 +87,14 @@ function view({state$, cycleId}) {
   );
 }
 
-function atomAutogrowTextarea({DOM, props$, optCycleId = makeCycleId()}) {
-  const cycleId = optCycleId.trim();
-  const actions = intent({DOM, cycleId});
+function atomAutogrowTextarea({DOM, props$}) {
+  const id = cuid();
+  const actions = intent({DOM, id});
   const state$ = model({props$, actions});
 
   return {
-    DOM: view({state$, cycleId}),
-    cycleId,
+    DOM: view({state$, id}),
+    id,
     state$,
   };
 }

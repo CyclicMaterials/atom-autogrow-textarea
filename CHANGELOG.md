@@ -1,3 +1,21 @@
+# v4.0.0 (2015-09-12)
+
+
+## Features
+
+- **atom-autogrow-textarea.js:** add cuid
+  ([cccc7f4e](https://github.com/CyclicMaterials/atom-autogrow-textarea/commits/cccc7f4ed3f104d51419ccaff351d357b1df304f))
+
+
+## Breaking Changes
+
+- **atom-autogrow-textarea.js:** due to [cccc7f4e](https://github.com/CyclicMaterials/atom-autogrow-textarea/commits/cccc7f4ed3f104d51419ccaff351d357b1df304f),
+ 
+
+`atom-autogrow-textarea` now returns object with property `id` instead of `cycleId`.
+
+
+
 # v3.1.1 (2015-09-11)
 
 

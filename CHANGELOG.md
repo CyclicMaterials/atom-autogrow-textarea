@@ -1,3 +1,17 @@
+# v5.0.0 (2015-09-23)
+
+
+## Breaking Changes
+
+- due to [09b4d7f2](https://github.com/CyclicMaterials/atom-autogrow-textarea/commits/09b4d7f274774b367efd8dec7a4e818fdfc24709),
+ 
+
+Move source files to `src/atom-autogrow-textarea`.
+
+Closes #9
+
+
+
 # v4.0.0 (2015-09-12)
 
 

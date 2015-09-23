@@ -1,4 +1,5 @@
 import cuid from 'cuid';
+import assign from 'fast.js/object/assign';
 import intent from './intent';
 import model from './model';
 import view from './view';
@@ -47,7 +48,7 @@ function atomAutogrowTextarea({DOM, props$}) {
   return {
     DOM: view({state$, id}),
     id,
-    state$,
+    state$: state$.map((state) => assign({}, state)),
   };
 }
 

@@ -1,3 +1,5 @@
+import assign from 'fast.js/object/assign';
+
 function htmlEncode(value) {
   return value.replace(/&/gm, `&amp;`)
     .replace(/"/gm, `&quot;`)
@@ -7,32 +9,40 @@ function htmlEncode(value) {
     .split(`\n`);
 }
 
+function computeMirrorTextValue(value, maxRows, rows) {
+  const tokens = htmlEncode(value);
+
+  const adjustedTokens = maxRows > 0 && tokens.length > maxRows ?
+    tokens.slice(0, maxRows) :
+    tokens.slice(0);
+
+  while (rows > 0 && adjustedTokens.length < rows) {
+    adjustedTokens.push(``);
+  }
+
+  return adjustedTokens.join(`<br>`) + `&nbsp;`;
+}
+
 function model({props$, actions, dialogueName}) {
   return props$.combineLatest(
     actions.value$,
     (props, value) => {
-      let {className, maxRows, rows} = props;
+      let {maxRows, rows} = props;
 
       maxRows = maxRows || 0;
       rows = rows || 1;
 
-      const tokens = htmlEncode(value);
+      const mirrorTextValue = computeMirrorTextValue(value, maxRows, rows);
 
-      const adjustedTokens = maxRows > 0 && tokens.length > maxRows ?
-        tokens.slice(0, maxRows) :
-        tokens.slice(0);
-
-      while (rows > 0 && adjustedTokens.length < rows) {
-        adjustedTokens.push(``);
-      }
-
-      return {
-        dialogueName,
-        className,
-        value,
-        mirrorTextValue: adjustedTokens.join(`<br>`) + `&nbsp;`,
-        rows,
-      };
+      return assign({},
+        props,
+        {
+          dialogueName,
+          value,
+          mirrorTextValue,
+          maxRows,
+          rows,
+        });
     }
   );
 }

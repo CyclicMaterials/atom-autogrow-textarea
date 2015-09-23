@@ -7,7 +7,7 @@ function htmlEncode(value) {
     .split(`\n`);
 }
 
-function model({props$, actions}) {
+function model({props$, actions, dialogueName}) {
   return props$.combineLatest(
     actions.value$,
     (props, value) => {
@@ -27,6 +27,7 @@ function model({props$, actions}) {
       }
 
       return {
+        dialogueName,
         className,
         value,
         mirrorTextValue: adjustedTokens.join(`<br>`) + `&nbsp;`,

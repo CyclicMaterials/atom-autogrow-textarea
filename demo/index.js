@@ -2,7 +2,7 @@
 
 import {Rx} from '@cycle/core';
 import {hJSX} from '@cycle/dom'; // eslint-disable-line
-import atomAutogrowTextarea from '../atom-autogrow-textarea.js';
+import atomAutogrowTextarea from './../src/atom-autogrow-textarea/index.js';
 
 function demo({DOM}) {
   const autogrowTextarea = atomAutogrowTextarea(

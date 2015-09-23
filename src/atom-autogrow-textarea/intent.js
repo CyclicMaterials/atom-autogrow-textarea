@@ -1,8 +1,7 @@
 import {Rx} from '@cycle/core';
-import {DIALOGUE_NAME} from '../atom-autogrow-textarea.js';
 
-function intent({DOM, id}) {
-  const selector = `.${id} .${DIALOGUE_NAME}_textarea`;
+function intent({DOM, id, dialogueName}) {
+  const selector = `.${id} .${dialogueName}_textarea`;
 
   return {
     value$: Rx.Observable.merge(

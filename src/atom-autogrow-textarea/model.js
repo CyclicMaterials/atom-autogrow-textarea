@@ -25,14 +25,14 @@ function computeMirrorTextValue(value, maxRows, rows) {
 
 function model({props$, actions, dialogueName}) {
   return props$.combineLatest(
-    actions.value$,
-    (props, value) => {
-      let {maxRows, rows} = props;
+    actions.inputValue$,
+    (props, inputValue) => {
+      let {maxRows, rows, value} = props;
 
       maxRows = maxRows || 0;
       rows = rows || 1;
 
-      const mirrorTextValue = computeMirrorTextValue(value, maxRows, rows);
+      const mirrorTextValue = computeMirrorTextValue(inputValue, maxRows, rows);
 
       return assign({},
         props,

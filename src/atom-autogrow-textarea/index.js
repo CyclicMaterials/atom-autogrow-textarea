@@ -23,8 +23,9 @@ const DIALOGUE_NAME = `atom-AutogrowTextarea`;
  *
  * Property | Description | Default
  * ---------------|-------------|---------
- * `maxRows` | The maximum rows the TEXTAREA can occupy before scrolling | 0
- * `rows` | The initial rows of the TEXTAREA | 1
+ * `maxRows` | {Number} The maximum rows the textarea can occupy before scrolling. | `0`
+ * `rows` | {Number} The initial rows of the textarea. | `1`
+ * `value` | {String} The value of the textarea. | ``
  *
  * @param {Object} {DOM, props$} A specification of:
  *

@@ -6,7 +6,7 @@ import combineClassNames from "@cyclic/util-combine-class-names";
 function view({state$, id}) {
   return state$.map(
     (state) => {
-      const {dialogueName, className, mirrorTextValue, rows} = state;
+      const {className, dialogueName, mirrorTextValue, rows, value} = state;
 
       return (// eslint-disable-line
         <div className={combineClassNames(id, `${dialogueName}`, className)}>
@@ -22,7 +22,8 @@ function view({state$, id}) {
               )}>
             <textarea
               className={`${dialogueName}_textarea`}
-              rows={rows}></textarea>
+              rows={rows}
+              value={value}></textarea>
           </div>
         </div>
       );

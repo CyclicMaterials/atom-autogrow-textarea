@@ -43,7 +43,7 @@
     "markdox": "^0.1.9",
     "minifyify": "^7.0.6",
     "postcss": "^4.0.0",
-    "postcss-cli": "^1.0.0",
+    "postcss-cli": "^2.1.1",
     "tape": "^4.2.0",
     "validate-commit-message": "^3.0.1"
   },

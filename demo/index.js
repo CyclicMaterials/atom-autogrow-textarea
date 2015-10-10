@@ -18,15 +18,22 @@ function demo({DOM}) {
       rows: 4,
     })});
 
+  const autogrowTextareaValue = atomAutogrowTextarea(
+    {DOM, props$: Rx.Observable.just({
+      value: `some text...`,
+    })});
+
   return {
     DOM: Rx.Observable.combineLatest(
       autogrowTextarea.DOM,
       autogrowTextareaMaxRows.DOM,
       autogrowTextareaRows.DOM,
+      autogrowTextareaValue.DOM,
       (
         autogrowTextareaVTree,
         autogrowTextareaMaxRowsVTree,
-        autogrowTextareaRowsVTree
+        autogrowTextareaRowsVTree,
+        autogrowTextareaValueVTree
       ) => ( // eslint-disable-line
         <div className=
                {`template-DemoPages_sectionContainer isVertical isCentered`}>
@@ -41,6 +48,8 @@ function demo({DOM}) {
             {autogrowTextareaMaxRowsVTree}
             <p>Initial height of 4 rows:</p>
             {autogrowTextareaRowsVTree}
+            <p>Initial value:</p>
+            {autogrowTextareaValueVTree}
           </section>
         </div>
       )

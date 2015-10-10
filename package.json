@@ -46,7 +46,7 @@
     "postcss-cssnext": "2.1.0",
     "postcss-custom-properties": "5.0.0",
     "postcss-import": "7.0.0",
-    "tape": "4.2.0",
+    "tape": "4.2.1",
     "validate-commit-message": "3.0.1"
   },
   "scripts": {

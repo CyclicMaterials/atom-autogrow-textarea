@@ -1,3 +1,32 @@
+# v6.0.0 (2015-10-11)
+
+
+## Features
+
+- **AutogrowTextarea:** add `value` prop
+  ([d20e846b](https://github.com/CyclicMaterials/atom-autogrow-textarea/commits/d20e846bc812d6cca5ac6194eb292b4d0e698cc7),
+   [#12](https://github.com/CyclicMaterials/atom-autogrow-textarea/issues/12))
+
+
+## Breaking Changes
+
+- due to [ccbde01f](https://github.com/CyclicMaterials/atom-autogrow-textarea/commits/ccbde01f0c09a6dd85cc4c99999ffd1c8b082f67),
+ 
+
+Rename component directory and component function.
+
+Before:
+- *src/atom-autogrow-textarea*
+- `atomAutogrowTextarea()`
+
+After:
+- *src/AutogrowTextarea*
+- `AutogrowTextarea()`
+
+Closes #11
+
+
+
 # v5.0.0 (2015-09-23)
 
 

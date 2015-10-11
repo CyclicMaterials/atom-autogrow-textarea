@@ -1,7 +1,7 @@
 import {Rx} from '@cycle/core';
 
-function intent({DOM, id, dialogueName}) {
-  const selector = `.${id} .${dialogueName}_textarea`;
+function intent({DOM, id, componentName}) {
+  const selector = `.${id} .${componentName}_textarea`;
 
   return {
     inputValue$: Rx.Observable.merge(

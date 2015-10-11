@@ -4,6 +4,8 @@
 
 ## Installation
 
+[![npm version](https://badge.fury.io/js/%40cyclic%2Fatom-autogrow-textarea.svg)](http://badge.fury.io/js/%40cyclic%2Fatom-autogrow-textarea)
+
 ```shell
 $ npm install @cyclic/atom-autogrow-textarea
 ```

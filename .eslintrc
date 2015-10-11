@@ -1,9 +1,14 @@
 {
   "extends": "eslint-config-cycle",
+  "env": {
+    "browser": true,
+    "node": true
+  },
   "ecmaFeatures": {
     "jsx": true
   },
   "rules": {
+    "new-cap": 0,
     "semi": [2, "always"]
   }
 }

@@ -1,10 +1,6 @@
 
 # Cyclic Materials atom-autogrow-textarea API
 
-- [`atomAutogrowTextarea`](#atomAutogrowTextarea)
-
-### <a id="atomAutogrowTextarea"></a> `atomAutogrowTextarea({DOM, props$})`
-
 `atomAutogrowTextarea` is a component containing a TEXTAREA that grows
 in height as more lines of input are entered. Unless an explicit height
 or the `maxRows` property is set, it will never scroll.
@@ -15,14 +11,25 @@ Example:
       maxRows: 4
     })});
 
+### Styling
+
+The following variables and classes are available for styling:
+
+Variable/class | Description | Default
+---------------|-------------|---------
+`.atom-AutogrowTextarea` | AutogrowTextarea component. |
+`.atom-AutogrowTextarea_container` | Styles the textarea container. |
+`.atom-AutogrowTextarea_textarea` | Styles the textarea. |
+
 ### Properties
 
 The following properties is available:
 
 Property | Description | Default
 ---------------|-------------|---------
-`maxRows` | The maximum rows the TEXTAREA can occupy before scrolling | 0
-`rows` | The initial rows of the TEXTAREA | 1
+`maxRows` | {Number} The maximum rows the textarea can occupy before scrolling. | `0`
+`rows` | {Number} The initial rows of the textarea. | `1`
+`value` | {String} The value of the textarea. | ``
 
 #### Arguments:
 

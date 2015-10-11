@@ -1,4 +1,4 @@
-@import "../src/atom-autogrow-textarea";
+@import "../src/AutogrowTextarea";
 @import "@cyclic/template-demo-pages/template-demo-pages";
 
 body {

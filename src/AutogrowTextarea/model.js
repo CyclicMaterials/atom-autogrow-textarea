@@ -1,4 +1,4 @@
-import assign from 'fast.js/object/assign';
+import {merge} from 'ramda';
 
 function htmlEncode(value) {
   return value.replace(/&/gm, `&amp;`)
@@ -23,25 +23,24 @@ function computeMirrorTextValue(value, maxRows, rows) {
   return adjustedTokens.join(`<br>`) + `&nbsp;`;
 }
 
-function model({props$, actions, dialogueName}) {
+function model({actions, componentName, props$}) {
   return props$.combineLatest(
     actions.inputValue$,
     (props, inputValue) => {
       let {maxRows, rows, value} = props;
 
-      maxRows = maxRows || 0;
-      rows = rows || 1;
+      //maxRows = maxRows || 0;
+      //rows = rows || 1;
 
       const mirrorTextValue = computeMirrorTextValue(inputValue, maxRows, rows);
 
-      return assign({},
-        props,
+      return merge(props,
         {
-          dialogueName,
-          value,
-          mirrorTextValue,
+          componentName,
           maxRows,
+          mirrorTextValue,
           rows,
+          value,
         });
     }
   );

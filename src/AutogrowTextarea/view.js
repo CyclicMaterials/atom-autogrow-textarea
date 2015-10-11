@@ -6,22 +6,22 @@ import combineClassNames from "@cyclic/util-combine-class-names";
 function view({state$, id}) {
   return state$.map(
     (state) => {
-      const {className, dialogueName, mirrorTextValue, rows, value} = state;
+      const {className, componentName, mirrorTextValue, rows, value} = state;
 
       return (// eslint-disable-line
-        <div className={combineClassNames(id, `${dialogueName}`, className)}>
+        <div className={combineClassNames(id, `${componentName}`, className)}>
           <div
-            className={`${dialogueName}_mirrorText`}
+            className={`${componentName}_mirrorText`}
             attributes={{'aria-hidden': true}}
             innerHTML={mirrorTextValue}></div>
 
           <div
             className={combineClassNames(
-              `${dialogueName}_container`,
+              `${componentName}_container`,
               `atom-Layout--fit`
               )}>
             <textarea
-              className={`${dialogueName}_textarea`}
+              className={`${componentName}_textarea`}
               rows={rows}
               value={value}></textarea>
           </div>

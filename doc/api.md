@@ -17,7 +17,9 @@ The following variables and classes are available for styling:
 
 Variable/class | Description | Default
 ---------------|-------------|---------
-`.atom-AutogrowTextarea` | AutogrowTextarea container component. |
+`.atom-AutogrowTextarea` | AutogrowTextarea component. |
+`.atom-AutogrowTextarea_container` | Styles the textarea container. |
+`.atom-AutogrowTextarea_textarea` | Styles the textarea. |
 
 ### Properties
 

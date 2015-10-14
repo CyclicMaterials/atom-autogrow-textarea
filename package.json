@@ -52,7 +52,7 @@
     "faucet": "0.0.1",
     "markdox": "0.1.10",
     "minifyify": "7.1.0",
-    "postcss": "5.0.9",
+    "postcss": "5.0.10",
     "postcss-cli": "2.1.1",
     "postcss-cssnext": "2.1.0",
     "postcss-custom-properties": "5.0.0",

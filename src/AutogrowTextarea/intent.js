@@ -1,4 +1,4 @@
-import {Rx} from '@cycle/core';
+import Rx from 'rx';
 
 function intent({DOM, id, componentName}) {
   const selector = `.${id} .${componentName}_textarea`;

@@ -1,8 +1,8 @@
 /** @jsx hJSX */
 
 import AutogrowTextarea from './../src/AutogrowTextarea/index';
+import Rx from 'rx';
 import {hJSX} from '@cycle/dom'; // eslint-disable-line
-import {Rx} from '@cycle/core';
 
 function slice(vtrees, counter, length) {
   return vtrees.slice(counter.count, counter.count += length);

@@ -35,7 +35,7 @@
     "@cyclic/util-predicate": "1.0.0",
     "categories-js": "0.3.0",
     "cuid": "1.3.8",
-    "ramda": "0.17.1"
+    "ramda": "0.18.0"
   },
   "devDependencies": {
     "@cycle/core": "5.0.0",

@@ -112,7 +112,7 @@ The raw styles are found in the *src* directory. In your CSS stylesheet,
 you simply import the raw styles you need, for example:
 
 ```css
-@import '@cyclic/atom-autogrow-textarea/src/AutogrowTextare
+@import '@cyclic/atom-autogrow-textarea/src/AutogrowTextarea
 ```
 
 You then need to have a process that transpiles your CSS. You can [use cssnext] 

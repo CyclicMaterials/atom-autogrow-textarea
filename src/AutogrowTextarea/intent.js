@@ -1,7 +1,7 @@
 import Rx from 'rx';
 
 function intent({DOM, id, componentName}) {
-  const selector = `.${id} .${componentName}_textarea`;
+  const selector = `${id ? `.` + id + ` ` : ``}.${componentName}_textarea`;
 
   return {
     inputValue$: Rx.Observable.merge(

@@ -9,7 +9,7 @@ function view({state$, id}) {
       const {className, componentName, mirrorTextValue, rows, value} = state;
 
       return (// eslint-disable-line
-        <div className={combineClassNames(id, `${componentName}`, className)}>
+        <div className={combineClassNames(id, componentName, className)}>
           <div
             className={`${componentName}_mirrorText`}
             attributes={{'aria-hidden': true}}

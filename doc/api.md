@@ -1,13 +1,17 @@
 
 # Cyclic Materials atom-autogrow-textarea API
 
-`atomAutogrowTextarea` is a component containing a TEXTAREA that grows
+- [`AutogrowTextarea`](#AutogrowTextarea)
+
+### <a id="AutogrowTextarea"></a> `AutogrowTextarea({DOM, props$})`
+
+`AutogrowTextarea` is a component containing a TEXTAREA that grows
 in height as more lines of input are entered. Unless an explicit height
 or the `maxRows` property is set, it will never scroll.
 
 Example:
 
-    atomAutogrowTextarea({DOM, props$: Rx.Observable.just({
+    AutogrowTextarea({DOM, props$: Rx.Observable.just({
       maxRows: 4
     })});
 
@@ -39,7 +43,7 @@ Property | Description | Default
 
 #### Return:
 
-*(Object)* The atomAutogrowTextarea object. The object has the following structure:
+*(Object)* The AutogrowTextarea object. The object has the following structure:
 
     {
       DOM: Observable,

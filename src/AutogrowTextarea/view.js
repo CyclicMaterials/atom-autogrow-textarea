@@ -1,6 +1,6 @@
 /** @jsx hJSX */
 
-import {hJSX} from '@cycle/dom'; // eslint-disable-line
+import {h} from '@cycle/dom'; // eslint-disable-line
 import combineClassNames from "@cyclic/util-combine-class-names";
 
 function view({state$, id}) {
@@ -8,25 +8,19 @@ function view({state$, id}) {
     (state) => {
       const {className, componentName, mirrorTextValue, rows, value} = state;
 
-      return (// eslint-disable-line
-        <div className={combineClassNames(id, `${componentName}`, className)}>
-          <div
-            className={`${componentName}_mirrorText`}
-            attributes={{'aria-hidden': true}}
-            innerHTML={mirrorTextValue}></div>
-
-          <div
-            className={combineClassNames(
-              `${componentName}_container`,
-              `atom-Layout--fit`
-              )}>
-            <textarea
-              className={`${componentName}_textarea`}
-              rows={rows}
-              value={value}></textarea>
-          </div>
-        </div>
-      );
+      return h(`div`,
+        {className: combineClassNames(id, componentName, className)}, [
+          h(`div.${componentName}_mirrorText`, {
+            attributes: {'aria-hidden': true},
+            innerHTML: mirrorTextValue,
+          }),
+          h(`div.${componentName}_container.atom-Layout--fit`, [
+            h(`textarea.${componentName}_textarea`, {
+              rows,
+              value,
+            }),
+          ]),
+        ]);
     }
   );
 }

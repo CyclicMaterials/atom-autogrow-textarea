@@ -11,9 +11,9 @@ const COMPONENT_NAME = `atom-AutogrowTextarea`;
 function AutogrowTextarea(sources) {
   const {DOM} = sources;
   const props$ = predicateObjectOfObservable(props)(sources.props$);
-  const id = cuid();
-  const actions = intent({DOM, id, componentName: COMPONENT_NAME});
-  const state$ = model({props$, actions, componentName: COMPONENT_NAME});
+  const {id = cuid()} = sources;
+  const actions = intent({componentName: COMPONENT_NAME, DOM, id});
+  const state$ = model({actions, componentName: COMPONENT_NAME, props$});
 
   return {
     DOM: view({state$, id}),

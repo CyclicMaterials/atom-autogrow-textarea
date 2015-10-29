@@ -1,3 +1,20 @@
+# v6.1.0 (2015-10-29)
+
+
+## Bug Fixes
+
+- **AutogrowTextarea:** change `first()` of `inputValue$`
+  ([24f61d3c](https://github.com/CyclicMaterials/atom-autogrow-textarea/commits/24f61d3c8633aef11ae93c41bebd1bd10acac1a0),
+   [#56](https://github.com/CyclicMaterials/atom-autogrow-textarea/issues/56))
+
+
+## Features
+
+- **AutogrowTextarea:** enable ability to pass `id`
+  ([34318d60](https://github.com/CyclicMaterials/atom-autogrow-textarea/commits/34318d607cca03510da6bb056ac10abe6b500d84),
+   [#53](https://github.com/CyclicMaterials/atom-autogrow-textarea/issues/53))
+
+
 # v6.0.2 (2015-10-20)
 
 

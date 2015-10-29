@@ -2,13 +2,13 @@ import AutogrowTextarea from './AutogrowTextarea/index';
 
 module.exports = {
   /**
-   * `atomAutogrowTextarea` is a component containing a TEXTAREA that grows
+   * `AutogrowTextarea` is a component containing a TEXTAREA that grows
    * in height as more lines of input are entered. Unless an explicit height
    * or the `maxRows` property is set, it will never scroll.
    *
    * Example:
    *
-   *     atomAutogrowTextarea({DOM, props$: Rx.Observable.just({
+   *     AutogrowTextarea({DOM, props$: Rx.Observable.just({
    *       maxRows: 4
    *     })});
    *
@@ -37,14 +37,16 @@ module.exports = {
    *     - {Function} DOM The DOM driver function.
    *     - {Observable} props$ An Observable of object of properties.
    *
-   * @returns {Object} The atomAutogrowTextarea object. The object has the
-   * following structure:
+   * @returns {Object} The AutogrowTextarea object. The object
+   * has the following structure:
    *
    *     {
    *       DOM: Observable,
    *       id: String,
    *       state$: Observable
    *     }
+   *
+   * @function AutogrowTextarea
    */
   AutogrowTextarea,
 };

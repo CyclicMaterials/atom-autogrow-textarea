@@ -58,7 +58,7 @@
     "postcss": "5.0.10",
     "postcss-cssnext": "2.2.0",
     "postcss-custom-properties": "5.0.0",
-    "postcss-import": "7.1.0",
+    "postcss-import": "7.1.2",
     "validate-commit-message": "3.0.1",
     "vdom-to-html": "^2.1.1"
   },
